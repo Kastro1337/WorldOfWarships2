@@ -7,8 +7,8 @@
 '''
 
 
-# Cria um tabuleiro mto do bacana
-def tabuleiro1(vlinha = 40, vcoluna = 40):
+ # Cria um tabuleiro mto do bacana
+def cria_matrix(vlinha = 10, vcoluna = 10):
     matriz = []
     linha = []
     for i in range(vcoluna):
@@ -16,3 +16,9 @@ def tabuleiro1(vlinha = 40, vcoluna = 40):
     for i in range(vlinha):
         matriz.append(linha)
     return matriz
+
+def posiciona_navio(tab,tipo,inicial,final):
+    if inicial > final:
+        raise "erro1"
+    if inicial
+    return
