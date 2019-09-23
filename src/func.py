@@ -30,14 +30,16 @@ def missil(tab,x,y):
         return tab
     else:
         tab[y][x] = '0'
-        return  tab 
+        return  tab
 
-def pos_barco(tab, x, y, tipo, OneDirection='R'): 
+def pos_barco(tab, x, y, tipo, OneDirection='R'):
     # zygmunt barcman
     if  OneDirection.upper() == "R":
-        tab[y][x] = tipo
+        for i in range(int(tipo)):
+            tab[y][x+i] = tipo
     elif OneDirection.upper() == "D":
-        tab[y][x] = tipo
+        for i in range(int(tipo)):
+            tab[y+i][x] = tipo
     else:
         raise "Erro, deve ser direção"
     return tab

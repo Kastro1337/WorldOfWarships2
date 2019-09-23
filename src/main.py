@@ -8,7 +8,7 @@ tab1 = func.cria_matrix(10,10)
 tab2 = func.cria_matrix(10,10)
 
 # Note: tab1[y][x]
-tab1 = func.pos_barco(tab1,0,0,'1','R')
+tab1 = func.pos_barco(tab1,0,0,'3','D')
 #tab1[0][0] = 'X'
 
 func.print_tab(tab1)
