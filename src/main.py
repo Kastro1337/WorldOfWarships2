@@ -6,24 +6,32 @@ __author__ = "Kastro"
 
 tab1 = func.cria_matrix(10,10)
 tab2 = func.cria_matrix(10,10)
+tab3 = func.cria_matrix(10,10)
 
-# Note: tab1[y][x]
-tab1 = func.pos_barco(tab1,0,0,'3','D')
-#tab1[0][0] = 'X'
 
-func.print_tab(tab1)
-tab1 = func.missil(tab1,0,0)
-print("teste")
-func.print_tab(tab1)
+for i in range(5):
+    print("jogador 1:")
+    func.print_tab(tab1)
+    print(i)
+    func.pos_barco(tab1,x = int(input("Digite a Coluna")),y = int(input("Digite a Fileira")), tipo = str(i+1),OneDirection = input("Digite a direção [R/D]"))
 
-#TODO: HIT or MISS aviso
-#TODO: lógica de jogo aplicada
+for i in range(5):
 
-'''
-backuptab1 = tab1
-# Não funciona pq listas tem vida própria
-if backuptab1 == tab1:
-    print("miss")
-else:
-    print('hit')
-'''
+    print("jogador 2:")
+    func.print_tab(tab2)
+    print(i)
+    func.pos_barco(tab2,x = int(input("Digite a Coluna")),y = int(input("Digite a Fileira")), tipo = str(i+1),OneDirection = input("Digite a direção [R/D]"))
+
+
+while tab1 != tab3 or tab2 != tab3:
+
+    print("jogador 1:")
+    print(func.print_tab(tab1))
+    print('\n')
+    print("jogador 2:")
+    print(func.print_tab(tab2))
+
+# TODO: aplicar lógica de jogo
+# TODO: printar Acertou / errou
+# TODO: posicionar o número de casas do barco, dicionario
+# TODO: bota teu nome de junto do __author__
