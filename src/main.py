@@ -28,14 +28,16 @@ for i in range(5):
 
 while tab1 != tab3 or tab2 != tab3:
 
+    print("\n")
     print("jogador 1:")
     print(func.print_tab(tab1))
+    missil(tab2,x = int(input(" Digite a coluna")), y = int(input("Digite a Fileira:")))
     print('\n')
     print("jogador 2:")
     print(func.print_tab(tab2))
-    
+    missil(tab1,x = int(input("Digite a coluna")), y = int(input("Digite a Fileira:")))
+
 
 # TODO: aplicar lógica de jogo
 # TODO: printar Acertou / errou
-# TODO: posicionar o número de casas do barco, dicionario
 # TODO: bota teu nome de junto do __author__
