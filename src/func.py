@@ -43,3 +43,29 @@ def pos_barco(tab, x, y, tipo, OneDirection='R'):
     else:
         raise "Erro, deve ser direção"
     return tab
+
+
+
+def verifica_se_a_posicao_que_o_usuario_escolheu_eh_valida(tipo):
+    
+    while True:
+        x = int(input("Digite a Coluna (x)"))
+        y = int(input("Digite a Fileira (y)"))
+        OneDirection = str(input("Digite a direção [R/D]")).upper()
+
+        
+        
+        
+     #   print('aquii')
+        
+        if OneDirection == 'R' or  OneDirection == 'D'  :
+         #   print('Caiu aquiii')
+            if y + int(tipo) < 10 or  x + int(tipo) < 10 :
+                
+          #      print('Caiu aqui')
+                break
+        print('Valor invalido, Digite novamente \n \n \n ')
+                
+
+    return (x,y,OneDirection)
+    
