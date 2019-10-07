@@ -9,6 +9,7 @@ tamanho_tab = 10
  
 tab1 = func.cria_matrix(tamanho_tab,tamanho_tab)
 tab2 = func.cria_matrix(tamanho_tab,tamanho_tab)
+
 tab3 = func.cria_matrix(tamanho_tab,tamanho_tab)
 
 tnavios = {"barco de patrulha":'2',"submarino":'3',"destroyer":'3',"encouraçado":'4',"porta-avião":'5'}
@@ -25,7 +26,7 @@ for i in range(5):
     
     func.pos_barco(tab1,verific[0],verific[1], tipo,verific[2])
 
-
+func.print_tab(tab1)
 
 for i in range(5):
 
@@ -37,16 +38,17 @@ for i in range(5):
     
     func.pos_barco(tab2,verific[0],verific[1], tipo,verific[2])
 
+func.print_tab(tab2)
 
 while tab1 != tab3 or tab2 != tab3:
 
     print("jogador 1:")
-    print(func.print_tab(tab1))
-    tab2 = missil(tab2,x = str(input(" Digite a coluna")), y = str(input("Digite a Fileira:")))
+    func.print_tab(tab1)
+    tab2 = func.missil(tab2,x = str(input(" Digite a coluna")), y = str(input("Digite a Fileira:")))
     print('\n')
     print("jogador 2:")
-    print(func.print_tab(tab2))
-    tab1 = missil(tab1,x = str(input("Digite a coluna")), y = str(input("Digite a Fileira:")))
+    func.print_tab(tab2)
+    tab1 = func.missil(tab1,x = str(input("Digite a coluna")), y = str(input("Digite a Fileira:")))
     print('\n')
     
 # TODO: printar Acertou / errou

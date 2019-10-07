@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = "Kastro"
+__author__ = "Kastro & Rebelatineo"
 
 
 '''def cria_matrix(vlinha = 40, vcoluna = 40):
@@ -26,11 +26,14 @@ def print_tab(tabuleiro):
 
 def missil(tab,x,y):
     # manda um teleguiado, very OP
-    if tab[y][x] == '0':
+    if tab[int(y)][int(x)] == '0':
+        print("Errou")
         return tab
     else:
-        tab[y][x] = '0'
+        print("Acertou!!!!")
+        tab[int(y)][int(x)] = '0'
         return  tab
+
 
 def pos_barco(tab, x, y, tipo, OneDirection='R'):
     # zygmunt barcman
@@ -39,7 +42,7 @@ def pos_barco(tab, x, y, tipo, OneDirection='R'):
             tab[y][x+i] = tipo
     elif OneDirection.upper() == "D":
         for i in range(int(tipo)):
-            tab[y+i][x] = tipo
+            tab[y+i][x] = tipo 
     else:
         raise "Erro, deve ser direção"
     return tab
@@ -51,8 +54,10 @@ def verifica_se_a_posicao_que_o_usuario_escolheu_eh_valida(tipo):
     while True:
         x = int(input("Digite a Coluna (x)"))
         y = int(input("Digite a Fileira (y)"))
-        OneDirection = str(input("Digite a direção [R/D]")).upper()
 
+        OneDirection = str(input("Digite a direção [R/D]")).upper()
+        
+        
         
         
         
