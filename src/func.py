@@ -15,7 +15,7 @@ def print_tab(tabuleiro):
     for i in tabuleiro:# pega um elemento do tabuleiro individualmente.
         for j in range(len(i)):
             if i[j] == '0':
-                i = '\u2588'
+                i[j] = '\u2588'
         print(" ".join(i))
 
 def missil(tab,x,y):
