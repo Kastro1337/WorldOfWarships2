@@ -35,18 +35,33 @@ def missil(tab,x,y):
         return  tab
 
 
-def pos_barco(tab, x, y, tipo, OneDirection='R'):
-    # zygmunt barcman
-    if  OneDirection.upper() == "R":
+def pos_barco(tab, x, y, tipo, OneDirection='D'):
+    # zygmunt barcman. posiciona o barco no tabuleiro
+    if  OneDirection.upper() == "D": # posicionado para a direita
+        for i in range(int(tipo)):   # O tipo é um número em formato de string
+            if tab[y][x + i] != '\u2588':
+                for i in range( int(tipo) ):
+                    if tab[y][x+i] == tipo:
+                        tab[y][x+i] = '\u2588'
+      
+                print('Opha opa opa você não pode colocar seu barco aqui amigão')
+                print('Pedeu um barco OTARIO')
+                break
+            else:
+                tab[y][x+i] = tipo       # as casas posicionadas serão o alcance do tipo para a d    
+    elif OneDirection.upper() == "B":
         for i in range(int(tipo)):
-            tab[y][x+i] = tipo
-    elif OneDirection.upper() == "D":
-        for i in range(int(tipo)):
-            tab[y+i][x] = tipo 
-    else:
-        raise "Erro, deve ser direção"
-    return tab
+            if tab[y+i][x] != '\u2588':
+                for i in range(int(tipo)):
+                    if tab[y+i][x] == tipo:   tab[y+i][x] = '\u2588'
 
+                print('Opha opa opa você não pode colocar seu barco aqui amigão')
+                print('Pedeu um barco OTARIO')
+
+                break
+            else:
+                tab[y+i][x] = tipo       # as casas posicionadas serão o alcance do tipo para baixo
+    return tab
 
 
 def verifica_se_a_posicao_que_o_usuario_escolheu_eh_valida(tipo):
