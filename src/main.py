@@ -32,7 +32,7 @@ for i in range(5):
     print("jogador 2:")
     func.print_tab(tab2)
     print(navios[i])
-    
+
     tipo =  tnavios[navios[i]]
     verific = func.verifica_se_a_posicao_que_o_usuario_escolheu_eh_valida(tipo)
 
