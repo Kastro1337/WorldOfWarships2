@@ -7,25 +7,25 @@ def cria_matrix(vlinha, vcoluna):
     # Cria um tabuleiro mto do bacana
     tabuleiro = []
     for i in range(vlinha):             # cria linhas
-        tabuleiro.append(['0']*vcoluna) # cria elementos dentro das linhas, que servem como coluna as well
+        tabuleiro.append(['\u2588']*vcoluna) # cria elementos dentro das linhas, que servem como coluna as well
     return tabuleiro
 
 def print_tab(tabuleiro):
     # Printa esse tabuleiro de maneira razoável
     for i in tabuleiro:# pega um elemento do tabuleiro individualmente.
         for j in range(len(i)):
-            if i[j] == '0':
+            if i[j] == '\u2588':
                 i[j] = '\u2588'
         print(" ".join(i))
 
 def missil(tab,x,y):
     # manda um teleguiado, very OP
-    if tab[int(y)][int(x)] == '0': # se a posição no tabuleiro já for igual a 0 (nulo/água) - (x,y) invertido
+    if tab[int(y)][int(x)] == '\u2588': # se a posição no tabuleiro já for igual a 0 (nulo/água) - (x,y) invertido
         print("Errou")             # mostra erro
         return tab
     else:
         print("Acertou!!!!")       # senão mostra o acerto
-        tab[int(y)][int(x)] = '0'  # e substitui a posição
+        tab[int(y)][int(x)] = '\u2588'  # e substitui a posição
         return  tab
 
 
@@ -33,10 +33,10 @@ def pos_barco(tab, x, y, tipo, OneDirection='D'):
     # zygmunt barcman. posiciona o barco no tabuleiro
     if  OneDirection.upper() == "D": # posicionado para a direita
         for i in range(int(tipo)):   # O tipo é um número em formato de string
-            if tab[y][x + i] != '0':
+            if tab[y][x + i] != '\u2588':
 
                 for i in range(  int(tipo) ):
-                    if tab[y][x+i] == tipo:   tab[y][x+i] = '0'
+                    if tab[y][x+i] == tipo:   tab[y][x+i] = '\u2588'
 
 
                 print('Opha opa opa você não pode colocar seu barco aqui amigão')
@@ -52,10 +52,10 @@ def pos_barco(tab, x, y, tipo, OneDirection='D'):
 
     elif OneDirection.upper() == "B":
         for i in range(int(tipo)):
-            if tab[y + i][x] != '0':
+            if tab[y + i][x] != '\u2588':
 
                 for i in range(  int(tipo) ):
-                    if tab[y+i][x] == tipo:   tab[y+i][x] = '0'
+                    if tab[y+i][x] == tipo:   tab[y+i][x] = '\u2588'
 
 
 
@@ -89,12 +89,12 @@ def verifica_se_a_posicao_que_o_usuario_escolheu_eh_valida(tipo):
         if OneDirection == 'D' or  OneDirection == 'B'  :
 
 
-            if not y in range(0,10) or  x not in range(0,10):
+            if not y in range(0,40) or  x not in range(0,40):
                 print('Não é um valor valido') 
             else:
 
 
-                if y + int(tipo) < 10 or  x + int(tipo) < 10 : return (int(x),int(y),OneDirection) 	
+                if y + int(tipo) < 40 or  x + int(tipo) < 40 : return (int(x),int(y),OneDirection) 	
                 else: print('Nossos barcos não chegam lá comandante')
 
 

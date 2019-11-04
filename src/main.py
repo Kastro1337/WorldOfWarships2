@@ -4,11 +4,10 @@ __author__ = "Rebellatto , Kastro"
 # "That ain't working,
 #  That's the way you do it"
 
-tamanho_tab = 10
 
-tab1 = func.cria_matrix(tamanho_tab,tamanho_tab)
-tab2 = func.cria_matrix(tamanho_tab,tamanho_tab)
-tab3 = func.cria_matrix(tamanho_tab,tamanho_tab)
+tab1 = func.cria_matrix(40,40)
+tab2 = func.cria_matrix(40,40)
+tab3 = func.cria_matrix(40,40)
 
 tnavios = {"barco de patrulha":'2',"submarino":'3',"destroyer":'3',"encouraçado":'4',"porta-avião":'5'}
 navios = ["barco de patrulha","submarino","destroyer","encouraçado","porta-avião"]
