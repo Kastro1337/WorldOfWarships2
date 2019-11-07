@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 __author__ = "Kastro & Rebelatineo"
-
+import random
 '''funções para batalha naval.'''
 
 def cria_matrix(vlinha, vcoluna):
@@ -13,9 +13,6 @@ def cria_matrix(vlinha, vcoluna):
 def print_tab(tabuleiro):
     # Printa esse tabuleiro de maneira razoável
     for i in tabuleiro:# pega um elemento do tabuleiro individualmente.
-        for j in range(len(i)):
-            if i[j] == '\u2588':
-                i[j] = '\u2588'
         print(" ".join(i))
 
 def missil(tab,x,y):
@@ -60,8 +57,8 @@ def pos_barco(tab, x, y, tipo, OneDirection='D'):
 
 
 
-                print('Opha opa opa você não pode colocar seu barco aqui amigão')
-                print('Pedeu um barco OTARIO')
+                print('Opa opa opa você não pode colocar seu barco aqui amigão')
+                print('Perdeu um barco OTARIO')
 
                 break
             else: tab[y+i][x] = tipo       # as casas posicionadas serão o alcance do tipo para baixo
@@ -89,8 +86,8 @@ def verifica_se_a_posicao_que_o_usuario_escolheu_eh_valida(tipo):
         if OneDirection == 'D' or  OneDirection == 'B'  :
 
 
-            if not y in range(0,40) or  x not in range(0,40):
-                print('Não é um valor valido') 
+            if not y in range(0,39) or  x not in range(0,39):
+                print('Não é um valor válido') 
             else:
 
 
@@ -100,6 +97,13 @@ def verifica_se_a_posicao_que_o_usuario_escolheu_eh_valida(tipo):
 
 
 
-        else: print(OneDirection, 'Não e valido como posição') # retorna ao começo do laço, pois não verificou-se posições válidas.
+        else: print(OneDirection, 'Não e válido como posição') # retorna ao começo do laço, pois não verificou-se posições válidas.
 
-
+def computador(tipo = 0):
+	while True:	
+		x = random.randint(0,39)
+		y = random.randint(0,39)
+		OneDirection = random.choice(['D', 'B'])
+		if y + int(tipo) < 40 or  x + int(tipo) < 40 : 
+			return (int(x),int(y),OneDirection)
+	
