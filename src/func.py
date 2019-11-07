@@ -36,8 +36,8 @@ def pos_barco(tab, x, y, tipo, OneDirection='D'):
                     if tab[y][x+i] == tipo:   tab[y][x+i] = '\u2588'
 
 
-                print('Opha opa opa você não pode colocar seu barco aqui amigão')
-                print('Pedeu um barco OTARIO')
+                print('Opa opa opa você não pode colocar seu barco aqui amigão')
+                print('Perdeu um barco')
                 break
 
             else:   tab[y][x+i] = tipo       # as casas posicionadas serão o alcance do tipo para a d
@@ -58,7 +58,7 @@ def pos_barco(tab, x, y, tipo, OneDirection='D'):
 
 
                 print('Opa opa opa você não pode colocar seu barco aqui amigão')
-                print('Perdeu um barco OTARIO')
+                print('Perdeu um barco')
 
                 break
             else: tab[y+i][x] = tipo       # as casas posicionadas serão o alcance do tipo para baixo
@@ -91,7 +91,7 @@ def verifica_se_a_posicao_que_o_usuario_escolheu_eh_valida(tipo):
             else:
 
 
-                if y + int(tipo) < 40 or  x + int(tipo) < 40 : return (int(x),int(y),OneDirection) 	
+                if y + int(tipo) < 40 or  x + int(tipo) < 40 : return (int(x-1),int(y-1),OneDirection) 	
                 else: print('Nossos barcos não chegam lá comandante')
 
 
