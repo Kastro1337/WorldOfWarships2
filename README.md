@@ -1,4 +1,4 @@
 # WorldOfWarships2
-Cientistas anunciam CoD 23
+  Batalha Naval em Python
+  Angelo Castro e Guilherme.
 
-Done
